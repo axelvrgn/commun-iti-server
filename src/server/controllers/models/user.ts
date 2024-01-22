@@ -6,7 +6,6 @@ export const uernameRegex =
 export const registerUserRequestSchema = z.strictObject({
   username: z.string().regex(uernameRegex),
   password: z.string(),
-  passwordConfirmation: z.string(),
 });
 
 export const updateUserRequestSchema = z.strictObject({

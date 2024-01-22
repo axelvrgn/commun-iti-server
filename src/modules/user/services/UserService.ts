@@ -38,17 +38,12 @@ export class UserService {
   async register(
     username: string,
     password: string,
-    passwordConfirmation: string
   ) {
     username = this.normalizeUsername(username);
 
     const exists = await this.userRepo.findByUsername(username);
     if (exists) {
       return Bad("username_taken");
-    }
-
-    if (password !== passwordConfirmation) {
-      return Bad("password_confirmation_mismatch");
     }
 
     const passwordHash = await bCrypt.hash(password, 10);

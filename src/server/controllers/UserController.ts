@@ -36,7 +36,6 @@ export class UserController extends BaseHttpController {
     const result = await this.userService.register(
       req.body.username,
       req.body.password,
-      req.body.passwordConfirmation,
     );
 
     if (!result.success) {
