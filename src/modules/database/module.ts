@@ -12,6 +12,7 @@ export async function registerDatabaseModule(
   await createDatabase({
     options,
     ifNotExist: true,
+    initialDatabase: "postgres",
   });
 
   const connection = new DataSource({
