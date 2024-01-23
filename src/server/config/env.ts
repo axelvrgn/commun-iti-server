@@ -12,6 +12,7 @@ const configSchema = z.object({
   DB_URL: z
     .string()
     .default("postgresql://user:pass@localhost:5432/commun-iti-db"),
+  DB_NAME: z.string().default("commun-iti-db"),
 });
 
 export const SERVER_CONFIG = configSchema.parse(process.env);

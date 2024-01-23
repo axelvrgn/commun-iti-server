@@ -20,7 +20,7 @@ import { UserInfo } from "modules/user/domain";
 async function setup() {
   await registerDatabaseModule(rootContainer, {
     type: "postgres",
-    database: "commun-iti-db",
+    database: SERVER_CONFIG.DB_NAME,
     url: SERVER_CONFIG.DB_URL,
   });
 
